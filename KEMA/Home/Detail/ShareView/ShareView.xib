@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN2-xL-OgB">
+                    <rect key="frame" x="147.5" y="0.0" width="80" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="INb-WK-q97"/>
+                        <constraint firstAttribute="width" constant="80" id="Lsr-Aq-8UB"/>
+                    </constraints>
+                    <state key="normal" image="weChat.png"/>
+                </button>
+                <button opaque="NO" alpha="0.29999999999999999" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-w8-Qhd">
+                    <rect key="frame" x="67.5" y="0.0" width="80" height="50"/>
+                    <state key="normal" image="weibo.png"/>
+                </button>
+                <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-Og-xd8">
+                    <rect key="frame" x="227.5" y="0.0" width="80" height="50"/>
+                    <state key="normal" image="moments.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-fF-qsr">
+                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EhG-Jr-DvT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Cancle">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryS-Jp-W7e">
+                    <rect key="frame" x="16" y="333" width="343" height="1"/>
+                    <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="w9h-gY-pGY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wN2-xL-OgB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6JL-SX-A43"/>
+                <constraint firstItem="r5m-Og-xd8" firstAttribute="leading" secondItem="wN2-xL-OgB" secondAttribute="trailing" id="8P2-dh-qhZ"/>
+                <constraint firstItem="Dtj-w8-Qhd" firstAttribute="width" secondItem="wN2-xL-OgB" secondAttribute="width" id="AlE-a2-ZZW"/>
+                <constraint firstItem="r5m-Og-xd8" firstAttribute="height" secondItem="wN2-xL-OgB" secondAttribute="height" id="EJc-bC-Y7a"/>
+                <constraint firstItem="Dtj-w8-Qhd" firstAttribute="height" secondItem="wN2-xL-OgB" secondAttribute="height" id="ERY-PB-Xi8"/>
+                <constraint firstItem="r5m-Og-xd8" firstAttribute="centerY" secondItem="wN2-xL-OgB" secondAttribute="centerY" id="GmS-Fa-PpD"/>
+                <constraint firstItem="Efh-fF-qsr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Il5-Iz-PTg"/>
+                <constraint firstItem="wN2-xL-OgB" firstAttribute="leading" secondItem="Dtj-w8-Qhd" secondAttribute="trailing" id="R8Z-SG-scq"/>
+                <constraint firstItem="ryS-Jp-W7e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="TrW-sq-nIK"/>
+                <constraint firstItem="Efh-fF-qsr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="XZ5-Uq-K6p"/>
+                <constraint firstItem="Efh-fF-qsr" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="czi-1c-kAC"/>
+                <constraint firstItem="r5m-Og-xd8" firstAttribute="width" secondItem="wN2-xL-OgB" secondAttribute="width" id="oDm-Kw-5Jm"/>
+                <constraint firstAttribute="trailing" secondItem="ryS-Jp-W7e" secondAttribute="trailing" constant="16" id="x7V-Hr-j2F"/>
+                <constraint firstItem="wN2-xL-OgB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="y5h-Jr-jFm"/>
+                <constraint firstItem="Dtj-w8-Qhd" firstAttribute="centerY" secondItem="wN2-xL-OgB" secondAttribute="centerY" id="yLg-Fq-Mfo"/>
+                <constraint firstItem="ryS-Jp-W7e" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zhU-gU-l7c"/>
+            </constraints>
+            <connections>
+                <outlet property="cancleBtn" destination="Efh-fF-qsr" id="cfl-uS-r4T"/>
+                <outlet property="momentsBtn" destination="r5m-Og-xd8" id="td9-Uv-zPz"/>
+                <outlet property="weChatBtn" destination="wN2-xL-OgB" id="Kep-L6-No1"/>
+                <outlet property="weiboBtn" destination="Dtj-w8-Qhd" id="4Lu-tZ-w65"/>
+            </connections>
+            <point key="canvasLocation" x="286" y="42"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="moments.png" width="80" height="50"/>
+        <image name="weChat.png" width="80" height="50"/>
+        <image name="weibo.png" width="80" height="50"/>
+    </resources>
+</document>
