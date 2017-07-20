@@ -23,4 +23,10 @@ typedef NS_ENUM(short, LoadState) {
 + (LoadState)getStateForCatID:(NSString *)catID itemID:(NSString *)itemID;
 
 + (void)clearAllCache;
+
++ (void)setFileSize:(CGFloat)size ForCatID:(NSString *)catID itemID:(NSString *)itemID;
++ (CGFloat)getFileSizeWithCatID:(NSString *)catID itemID:(NSString *)itemID;
+
+
+
 @end

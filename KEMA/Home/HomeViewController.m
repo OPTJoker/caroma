@@ -16,6 +16,7 @@
 #import "CategoryModel.h"
 #import "ItemModel.h"
 #import "LoadStateManager.h"
+#import "GetURLFileLength.h"
 
 @interface HomeViewController ()
 <UICollectionViewDelegateFlowLayout
@@ -133,7 +134,12 @@
     [button setImage:imageForButton forState:UIControlStateNormal];
     [button addTarget:self action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     //设置文字
-    NSString *buttonTitleStr = @"科马";
+
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *buttonTitleStr = [infoDic objectForKey:@"CFBundleDisplayName"];//@"科马";
+    if (IsStrEmpty(buttonTitleStr)) {
+        buttonTitleStr = @"";
+    }
     [button setTitle:buttonTitleStr forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -258,13 +264,12 @@ static char *IDEForHomeCell = "IDEForHomeCellKey";
                         [model setValuesForKeysWithDictionary:item];
                         [itemsModelArr addObject:model];
                         
-                        /*  此段代码为同步下载状态用的，事实证明没必要。
-                        if ([XLTools ISWebGLItemZipExitByCatID:catModel.CatID itemID:model.itemID]) {
-                            [LoadStateManager setStateForCatID:catModel.CatID itemID:model.itemID urlStrKey:KWEBGLURL(model.itemPkg) state:Loaded];
-                        }else{
-                            [LoadStateManager setStateForCatID:catModel.CatID itemID:model.itemID urlStrKey:KWEBGLURL(model.itemPkg) state:UnLoad];
-                        }
-                         */
+                        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                            [GetURLFileLength getUrlFileLength:KWEBGLURL(model.itemPkg) resultBlock:^(long long length, NSError *error) {
+                                CGFloat s = length/1024.0/1024.0;
+                                [LoadStateManager setFileSize:s ForCatID:catModel.CatID itemID:model.itemID];
+                            }];
+                        });
                     }
                     
                     [mutDic setObject:itemsModelArr forKey:itemsKey];

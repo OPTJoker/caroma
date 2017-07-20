@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadStateManager.h"
+#import "UIButton+JuhuaView.h"
 
 @interface PlayButton : UIButton
 
@@ -17,5 +18,7 @@
 
 - (void)setLoadState:(LoadState)loadState;
 - (void)setLoadState:(LoadState)loadState progress:(double)pro;
+
+- (void)setFileSizeForCatID:(NSString *)catID itemID:(NSString *)itemID;
 
 @end

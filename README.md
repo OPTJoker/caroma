@@ -1,2 +1,2 @@
-# caroma
-下载管理和解压标准模板
+# WeShapeShell_IOS
+微展世Playcanvas壳程序, IOS版

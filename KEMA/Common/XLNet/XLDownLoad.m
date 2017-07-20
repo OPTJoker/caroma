@@ -102,6 +102,7 @@ static XLDownLoad *xlDownload = nil;
 }
 
 #pragma mark - 下载操作
+
 + (void)downloadURL:(NSString *)urlStr destPath:(NSString *)destPath progress:(DownloadProBlock)progressBlock finish:(DownloadFinishBlock)finishBlock{
     
     DLog(@"destPath%@",destPath);

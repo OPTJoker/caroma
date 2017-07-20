@@ -17,7 +17,7 @@
 #import <SVProgressHUD.h>
 #import <WXApi.h>
 
-#define KWXAPPKEY @"wx7cfb1fcc3ed552cd"
+#define KWXAPPKEY @"wxd64813933e273473"
 
 @interface AppDelegate ()<WXApiDelegate>
 

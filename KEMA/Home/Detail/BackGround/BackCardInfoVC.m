@@ -50,7 +50,7 @@
         [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(60, 60));
             make.centerX.equalTo(self.view);
-            make.bottom.equalTo(self.view).mas_offset(-30);
+            make.bottom.equalTo(self.view).mas_offset(-16);
             _closeBtn.layer.cornerRadius = 30;
         }];
     }
@@ -77,7 +77,7 @@
 #pragma mark - 私有犯法
 - (void)close{
     [SVProgressHUD dismiss];
-
+    
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 

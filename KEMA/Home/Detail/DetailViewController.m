@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, WiFiMode) {
 #import "BackCardInfoVC.h"
 #import "ShareView.h"
 #import <WXApi.h>
+#import "GetURLFileLength.h"
 
 @interface DetailViewController ()
 <
@@ -136,7 +137,7 @@ Delegate
 
 - (NSTimer *)t{
     if (nil == _t) {
-        _t = [NSTimer scheduledTimerWithTimeInterval:0.05 repeats:self block:^(NSTimer * _Nonnull timer) {
+        _t = [NSTimer scheduledTimerWithTimeInterval:0.05 repeats:YES block:^(NSTimer * _Nonnull timer) {
             [self refreshLoadProgress];
         }];
     }
@@ -152,7 +153,7 @@ Delegate
 
     [super viewWillDisappear:animated];
     
-    self.navigationController.navigationBar.hidden = NO;
+    //self.navigationController.navigationBar.hidden = NO;
     
     [self.t invalidate];
     self.t = nil;
@@ -206,6 +207,7 @@ Delegate
     return _bigImgV;
 }
 
+// 切换大图
 - (void)setAnimationToImgV:(UIImageView *)imgV direction:(MoveInFromDirection)direction{
     static NSString *animKey = @"changeImgFadeAnim";
     [imgV.layer removeAnimationForKey:animKey];
@@ -246,7 +248,7 @@ Delegate
     [imgV.layer addAnimation:animation forKey:animKey];
 }
 
-- (UIButton *)playBtn{
+- (PlayButton *)playBtn{
     if (nil == _playBtn) {
         _playBtn = [PlayButton buttonWithType:UIButtonTypeCustom];
         _playBtn.backgroundColor = KWHITECOLOR;
@@ -639,9 +641,14 @@ Delegate
     NSURL *url = [NSURL URLWithString:KFRONTIMGURL(self.catID, model.itemID)];
     [self.bigImgV sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:placeholderImgNameKey] options:SDWebImageProgressiveDownload];
     
-    [self setAnimationToImgV:self.bigImgV direction:direction];
+    
+    if (st == UnLoad || st == ReLoad) {
+        [self.playBtn setFileSizeForCatID:self.catID itemID:curItem.itemID];
+    }
     
     // 开始动画
+    [self setAnimationToImgV:self.bigImgV direction:direction];
+        // 控件文字透明动画
     [UIView animateWithDuration:0.25 animations:^{
         self.nameLab.alpha = 0;
         self.shorDescLab.alpha = 0;
@@ -654,6 +661,7 @@ Delegate
             self.shorDescLab.alpha = 1;
             self.descLab.alpha = 1;
         }];
+        
     }];
     
 }
@@ -750,13 +758,15 @@ Delegate
         // 下载
         NSString *itemPath = [XLTools WebGLItemPathWithCatID:catID itemID:itemID];
         DLog(@"itemZipPath:%@",itemPath);
-        
+
         [self.playBtn setLoadState:Loading progress:0.0];
         [LoadStateManager setStateForCatID:catID itemID:itemID urlStrKey:webGLZipURL state:Loading];
+        self.playBtn.userInteractionEnabled = NO;
         
         [XLDownLoad downloadURL:webGLZipURL destPath:itemPath progress:^(double progress) {
             //DLog(@"progress:%.2f",progress);
-
+            self.playBtn.userInteractionEnabled = YES;
+            
             [XLDownLoad setProgress:progress forKey:webGLZipURL];            
             [self refreshLoadProgress];
             
@@ -788,10 +798,6 @@ Delegate
                     [self presentViewController:alertController animated:YES completion:^{
                     }];
                 }
-                
-                
-                
-                
                 
             }
             
@@ -863,7 +869,12 @@ Delegate
      */
     BackCardInfoVC *back = [[BackCardInfoVC alloc] init];
     back.imgURLStr = KFBackIMGURL(self.catID, curItem.itemID);
-    [self presentViewController:back animated:NO completion:^{
+    
+    back.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    back.modalPresentationStyle = UIModalPresentationPopover;
+    
+    
+    [self presentViewController:back animated:YES completion:^{
     }];
 }
 #pragma mark - 第三个按钮
@@ -877,7 +888,9 @@ Delegate
         }break;
         case Loading:
         case Loaded:{
-            
+            if (!self.playBtn.userInteractionEnabled) {
+                return;
+            }
             NSString *msg = @"删除后不可恢复，您确定删除缓存?";
             if (state == Loading) {
                 msg = @"正在下载中，您确定取消下载并删除？";
@@ -896,7 +909,6 @@ Delegate
             
             [self presentViewController:alertController animated:yesAction completion:^{
             }];
-            
             
         }break;
             

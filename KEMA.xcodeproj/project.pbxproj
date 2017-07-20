@@ -30,6 +30,7 @@
 		481A86731F04FBA30078EADA /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 481A866F1F04FBA30078EADA /* MBProgressHUD.bundle */; };
 		481A86741F04FBA30078EADA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 481A86711F04FBA30078EADA /* MBProgressHUD.m */; };
 		481A86771F04FDB20078EADA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481A86761F04FDB20078EADA /* LeftViewController.m */; };
+		4831E2CE1F1DFE2C008DB300 /* UIButton+JuhuaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4831E2CD1F1DFE2C008DB300 /* UIButton+JuhuaView.m */; };
 		4851CD971F137086002720EE /* DutyWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4851CD961F137086002720EE /* DutyWebVC.m */; };
 		4851CD991F1371B7002720EE /* duty.html in Resources */ = {isa = PBXBuildFile; fileRef = 4851CD981F1371B7002720EE /* duty.html */; };
 		485972E71F0B8F1E00F7C64B /* XLToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 485972E61F0B8F1E00F7C64B /* XLToolBar.m */; };
@@ -56,6 +57,7 @@
 		48D947491F1103E300AD6263 /* aboutme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48D947461F1103E300AD6263 /* aboutme.txt */; };
 		48D9474A1F1103E300AD6263 /* AboutUSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D947481F1103E300AD6263 /* AboutUSVC.m */; };
 		48D9474E1F110AA600AD6263 /* BackCardInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9474D1F110AA600AD6263 /* BackCardInfoVC.m */; };
+		48DCD5211F175A3F00BC96A2 /* GetURLFileLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD5201F175A3F00BC96A2 /* GetURLFileLength.m */; };
 		48F0DEE61F10DA8C00ABDDA6 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0DEE51F10DA8C00ABDDA6 /* SettingVC.m */; };
 		99D13F700E400F63C5EEF502 /* libPods-KEMA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7FDDA48C48CFCB9783C845 /* libPods-KEMA.a */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,8 @@
 		481A86711F04FBA30078EADA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		481A86751F04FDB20078EADA /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		481A86761F04FDB20078EADA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		4831E2CC1F1DFE2C008DB300 /* UIButton+JuhuaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JuhuaView.h"; sourceTree = "<group>"; };
+		4831E2CD1F1DFE2C008DB300 /* UIButton+JuhuaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JuhuaView.m"; sourceTree = "<group>"; };
 		4851CD951F137086002720EE /* DutyWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DutyWebVC.h; sourceTree = "<group>"; };
 		4851CD961F137086002720EE /* DutyWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DutyWebVC.m; sourceTree = "<group>"; };
 		4851CD981F1371B7002720EE /* duty.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = duty.html; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		48D947481F1103E300AD6263 /* AboutUSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUSVC.m; sourceTree = "<group>"; };
 		48D9474C1F110AA600AD6263 /* BackCardInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackCardInfoVC.h; sourceTree = "<group>"; };
 		48D9474D1F110AA600AD6263 /* BackCardInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCardInfoVC.m; sourceTree = "<group>"; };
+		48DCD51F1F175A3F00BC96A2 /* GetURLFileLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetURLFileLength.h; sourceTree = "<group>"; };
+		48DCD5201F175A3F00BC96A2 /* GetURLFileLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetURLFileLength.m; sourceTree = "<group>"; };
 		48F0DEE41F10DA8C00ABDDA6 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		48F0DEE51F10DA8C00ABDDA6 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		5D7B0EBA863BD903FB6F2F5F /* Pods-KEMA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KEMA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KEMA/Pods-KEMA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +335,8 @@
 			children = (
 				481A86681F04FACD0078EADA /* XLTools.h */,
 				481A86691F04FACD0078EADA /* XLTools.m */,
+				4831E2CC1F1DFE2C008DB300 /* UIButton+JuhuaView.h */,
+				4831E2CD1F1DFE2C008DB300 /* UIButton+JuhuaView.m */,
 				489194AA1F0E52B9007523F4 /* XLDebug.h */,
 				489194AB1F0E52B9007523F4 /* XLDebug.m */,
 				48CA53061F0C8495008F50D0 /* UILabel+LineSpaceAndWordSpace.h */,
@@ -374,6 +382,8 @@
 				489194981F0DE35C007523F4 /* XLRequest.m */,
 				489194A71F0E325E007523F4 /* XLDownLoad.h */,
 				489194A81F0E325E007523F4 /* XLDownLoad.m */,
+				48DCD51F1F175A3F00BC96A2 /* GetURLFileLength.h */,
+				48DCD5201F175A3F00BC96A2 /* GetURLFileLength.m */,
 			);
 			path = XLNet;
 			sourceTree = "<group>";
@@ -658,6 +668,7 @@
 			files = (
 				481A864B1F04F59B0078EADA /* XLUIViewController.m in Sources */,
 				489A13BD1F0F26810064DB61 /* LoadStateManager.m in Sources */,
+				48DCD5211F175A3F00BC96A2 /* GetURLFileLength.m in Sources */,
 				489194A91F0E325E007523F4 /* XLDownLoad.m in Sources */,
 				4891949E1F0DEFA2007523F4 /* CategoryModel.m in Sources */,
 				48A71DFB1F05F9A90042809D /* MMExampleDrawerVisualStateManager.m in Sources */,
@@ -690,6 +701,7 @@
 				481A866A1F04FACD0078EADA /* XLTools.m in Sources */,
 				489194AC1F0E52B9007523F4 /* XLDebug.m in Sources */,
 				481A86601F04F6210078EADA /* XLWKWebView.m in Sources */,
+				4831E2CE1F1DFE2C008DB300 /* UIButton+JuhuaView.m in Sources */,
 				48A71DF41F05EB860042809D /* XTNetReloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,6 +815,8 @@
 			baseConfigurationReference = 5D7B0EBA863BD903FB6F2F5F /* Pods-KEMA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weshape3D Digital Technologies Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weshape3D Digital Technologies Co., Ltd.";
 				DEVELOPMENT_TEAM = UBXLX4KLGN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KEMA/PrefixHeader.pch";
@@ -811,8 +825,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weshape.kemashell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4cae1f3-b927-45f8-aad5-9c2394bf37be";
-				PROVISIONING_PROFILE_SPECIFIER = XLDevPro;
+				PROVISIONING_PROFILE = "6eb63535-1df1-41eb-bb6c-0398de4a9887";
+				PROVISIONING_PROFILE_SPECIFIER = InHouseKEMA;
 			};
 			name = Debug;
 		};
@@ -821,6 +835,8 @@
 			baseConfigurationReference = C2292A3358815F8C432F2E57 /* Pods-KEMA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Weshape3D Digital Technologies Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Weshape3D Digital Technologies Co., Ltd.";
 				DEVELOPMENT_TEAM = UBXLX4KLGN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KEMA/PrefixHeader.pch";
@@ -829,8 +845,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weshape.kemashell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4cae1f3-b927-45f8-aad5-9c2394bf37be";
-				PROVISIONING_PROFILE_SPECIFIER = XLDevPro;
+				PROVISIONING_PROFILE = "6eb63535-1df1-41eb-bb6c-0398de4a9887";
+				PROVISIONING_PROFILE_SPECIFIER = InHouseKEMA;
 			};
 			name = Release;
 		};

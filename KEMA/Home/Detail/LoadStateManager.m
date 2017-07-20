@@ -11,6 +11,8 @@
 
 @interface LoadStateManager ()
 @property(nonatomic, strong) NSMutableDictionary *loadManagerDic;
+
+@property(nonatomic, strong) NSMutableDictionary *fileSizeDic;
 @end
 
 @implementation LoadStateManager
@@ -22,6 +24,12 @@
         _loadManagerDic = [NSMutableDictionary new];
     }
     return _loadManagerDic;
+}
+- (NSMutableDictionary *)fileSizeDic{
+    if (nil == _fileSizeDic) {
+        _fileSizeDic = [NSMutableDictionary new];
+    }
+    return _fileSizeDic;
 }
 #pragma mark - 单利
 static LoadStateManager *instance = nil;
@@ -35,6 +43,7 @@ static LoadStateManager *instance = nil;
         if (nil == instance) {
             instance = [[super allocWithZone:nil] init]; // 避免死循环
             [instance.loadManagerDic removeAllObjects];
+            [instance.fileSizeDic removeAllObjects];
         }
     }
     return instance;
@@ -106,5 +115,22 @@ static LoadStateManager *instance = nil;
         [[[LoadStateManager ShareInstance] loadManagerDic] setObject:dic forKey:key];
     }
 }
+
++ (void)setFileSize:(CGFloat)size ForCatID:(NSString *)catID itemID:(NSString *)itemID{
+    NSString *key = [NSString stringWithFormat:@"%@/%@",catID,itemID];
+    [[[LoadStateManager ShareInstance] fileSizeDic] setObject:[NSNumber numberWithDouble:size] forKey:key];
+}
++ (CGFloat)getFileSizeWithCatID:(NSString *)catID itemID:(NSString *)itemID{
+    NSString *key = [NSString stringWithFormat:@"%@/%@",catID,itemID];
+    NSNumber *num = [[[LoadStateManager ShareInstance] fileSizeDic] objectForKey:key];
+    if ([num isKindOfClass:[NSNumber class]]) {
+        return [num doubleValue];
+    }else{
+        return 0.f;
+    }
+    
+    
+}
+
 
 @end

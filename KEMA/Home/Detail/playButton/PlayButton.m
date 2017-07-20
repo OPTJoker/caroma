@@ -93,13 +93,30 @@
     _loadState = loadState;
     
     if (_loadState == UnLoad) {
-        [self setImageWithName:@"UnLoad"];
+        if (lastState != _loadState) {
+            [self setContentEdgeInsets:UIEdgeInsetsZero];
+            UIImage *loadingImg = [UIImage imageNamed:@"UnLoad"];
+            [self setContentEdgeInsets:UIEdgeInsetsZero];
+            [self setImageEdgeInsets:UIEdgeInsetsMake(1, 30-loadingImg.size.width/2., 10, 30-loadingImg.size.width/2.)];
+            [self setTitleEdgeInsets:UIEdgeInsetsMake(loadingImg.size.height+5+5, -loadingImg.size.width, 0, 0)];
+            [self setImage:loadingImg forState:UIControlStateNormal];
+        }
         [self setCircleProgress:0. lineWidth:0 strokeColor:KCLEARCOLOR finished:YES];
+        
+        //[self setTitle:[NSString stringWithFormat:@"%.1fM",0.0] forState:UIControlStateNormal];
         
     }else if (_loadState == ReLoad){
-        [self setImageWithName:@"ReLoad"];
-        [self setCircleProgress:0. lineWidth:0 strokeColor:KCLEARCOLOR finished:YES];
+        if (lastState != _loadState) {
+            [self setContentEdgeInsets:UIEdgeInsetsZero];
+            UIImage *loadingImg = [UIImage imageNamed:@"ReLoad"];
+            [self setContentEdgeInsets:UIEdgeInsetsZero];
+            [self setImageEdgeInsets:UIEdgeInsetsMake(1, 30-loadingImg.size.width/2., 10, 30-loadingImg.size.width/2.)];
+            [self setTitleEdgeInsets:UIEdgeInsetsMake(loadingImg.size.height+5+5, -loadingImg.size.width, 0, 0)];
+            [self setImage:loadingImg forState:UIControlStateNormal];
+        }
         
+        [self setCircleProgress:0. lineWidth:0 strokeColor:KCLEARCOLOR finished:YES];
+        //[self setTitle:[NSString stringWithFormat:@"%.1fM",0.0] forState:UIControlStateNormal];
     }else if (_loadState == Loading){
         if (lastState != _loadState) {
             [self setContentEdgeInsets:UIEdgeInsetsZero];
@@ -115,11 +132,18 @@
         [self didFinishLoad];
     }
     
-    if (_loadState!=Loading) {
+    if (_loadState==Loaded) {
         [self setContentEdgeInsets:UIEdgeInsetsZero];
         [self setTitleEdgeInsets:UIEdgeInsetsZero];
         [self setImageEdgeInsets:UIEdgeInsetsZero];
         [self setTitle:@"" forState:UIControlStateNormal];
+    }
+}
+
+- (void)setFileSizeForCatID:(NSString *)catID itemID:(NSString *)itemID{
+    if (self.loadState==UnLoad || self.loadState == ReLoad) {
+        CGFloat s = [LoadStateManager getFileSizeWithCatID:catID itemID:itemID];
+        [self setTitle:[NSString stringWithFormat:@"%.1fM",s] forState:UIControlStateNormal];
     }
 }
 
